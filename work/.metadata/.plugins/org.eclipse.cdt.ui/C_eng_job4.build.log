@@ -1,0 +1,85 @@
+22:33:51 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+In file included from vga_util.h:16:0,
+                 from main.c:31:
+font8x8_basic.h:2:2: warning: "/*" within comment [-Wcomment]
+  /**
+  ^
+main.c: In function 'main':
+main.c:65:4: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    init_measurement,
+    ^
+main.c:65:4: note: (near initialization for 'accelorometerX.configure_time_base')
+main.c:66:4: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    read_accelerometerX,
+    ^
+main.c:66:4: note: (near initialization for 'accelorometerX.init_measurement')
+main.c:67:4: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    update_graph,
+    ^
+main.c:67:4: note: (near initialization for 'accelorometerX.read_sensor')
+main.c:68:4: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    &accelorometerX,
+    ^
+main.c:68:4: note: (near initialization for 'accelorometerX.update_graph')
+main.c:69:4: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    draw_graph
+    ^
+main.c:69:4: note: (near initialization for 'accelorometerX.draw_graph')
+main.c:98:7: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+       init_measurement,
+       ^
+main.c:98:7: note: (near initialization for 'temp_sensor.configure_time_base')
+main.c:99:7: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+       read_temp,
+       ^
+main.c:99:7: note: (near initialization for 'temp_sensor.init_measurement')
+main.c:100:7: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+       update_graph,
+       ^
+main.c:100:7: note: (near initialization for 'temp_sensor.read_sensor')
+main.c:101:7: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+       &temp_sensor,
+       ^
+main.c:101:7: note: (near initialization for 'temp_sensor.update_graph')
+main.c:102:7: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+       draw_graph
+       ^
+main.c:102:7: note: (near initialization for 'temp_sensor.draw_graph')
+main.c:109:8: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+        init_measurement,
+        ^
+main.c:109:8: note: (near initialization for 'light_sensor.configure_time_base')
+main.c:110:8: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+        read_light,
+        ^
+main.c:110:8: note: (near initialization for 'light_sensor.init_measurement')
+main.c:111:8: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+        update_graph,
+        ^
+main.c:111:8: note: (near initialization for 'light_sensor.read_sensor')
+main.c:112:8: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+        &light_sensor,
+        ^
+main.c:112:8: note: (near initialization for 'light_sensor.update_graph')
+main.c:113:8: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+        draw_graph
+        ^
+main.c:113:8: note: (near initialization for 'light_sensor.draw_graph')
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+obj/default/sensor.o:(.data+0x0): multiple definition of `font8x8_basic'
+obj/default/main.o:(.data+0x0): first defined here
+c:/altera_lite/16.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.2.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: Disabling relaxation: it will not work with multiple definitions
+obj/default/vga_util.o:(.data+0x0): multiple definition of `font8x8_basic'
+obj/default/main.o:C:\Users\root\Documents\Test_area_debug8\HW_C_engjob\HW_C_ingjob\software\C_eng_job4/main.c:44: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [C_eng_job4.elf] Error 1
+
+22:33:52 Build Finished (took 1s.62ms)
+
