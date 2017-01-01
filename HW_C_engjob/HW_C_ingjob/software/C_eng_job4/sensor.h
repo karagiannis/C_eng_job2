@@ -56,7 +56,7 @@ typedef struct myQUEUE
 extern void queue_init(QUEUE *q);
 extern alt_32 queue_enqueue(QUEUE *q,alt_32 item);
 extern alt_32 queue_dequeue(QUEUE *q);
-extern void queue_print(QUEUE *q);
+extern void queue_print(const QUEUE *q);
 
 
 
@@ -77,8 +77,8 @@ struct SENSOR_CLASS {
     void (*configure_time_base)(alt_u32, SENSOR_OBJECT*); // Pointer to function which  records sampling freq. Unnecessary but used.
     void (*init_measurement)(SENSOR_OBJECT*);  //Pointer to function which initializes queue to zero, and draws graph
     void (*read_sensor)(QUEUE*);  	//Pointer to function which read the sensor in particular
-    void (*update_graph)(SENSOR_OBJECT*);  	//Pointer to function which draws the graph
-    void (*draw_graph)(const SENSOR_OBJECT*);		//Pointer to function which draws coordinate axes
+    void (*update_graph)( SENSOR_OBJECT*);  	//Pointer to function which draws the graph
+    void (*draw_graph_axes)(const SENSOR_OBJECT*);		//Pointer to function which draws coordinate axes
 };
 
 extern void config_time_base(alt_u32, SENSOR_OBJECT*);// Records the timebase
@@ -86,11 +86,11 @@ extern void init_measurement(SENSOR_OBJECT*);			//Initializes the queue
 extern void read_accelerometerX(QUEUE *);
 //void read_accelerometerY(QUEUE *q);
 //void read_accelerometerZ(QUEUE *q);
-extern void update_graph(SENSOR_OBJECT*);
+extern void update_graph( SENSOR_OBJECT*);
 extern void draw_graph(const SENSOR_OBJECT*);				//Draws the graph axes
 extern void read_temp(QUEUE *q);
 extern void read_light(QUEUE *q);
-extern void queue_print_screen(const QUEUE *q, const alt_u32 x_origo, const alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT *sensor_obj);
+extern void queue_print_screen(const QUEUE *q, const alt_u32 x_origo, const alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT* sensor_obj);
 
 extern unsigned int i2bcd(unsigned int i);//utility function for presenting time integer to bcd
 extern void update_time(unsigned int i);  //Prints the time

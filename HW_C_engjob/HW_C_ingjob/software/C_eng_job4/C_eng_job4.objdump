@@ -43,33 +43,33 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  12 .debug_frame  00000f44  00000000  00000000  0001157c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00001f10  00000000  00000000  000124c0  2**0
+ 13 .debug_str    00001f24  00000000  00000000  000124c0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00000a05  00000000  00000000  000143d0  2**0
+ 14 .debug_loc    00000a05  00000000  00000000  000143e4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000010  00000000  00000000  00014dd8  2**2
+ 15 .debug_alt_sim_info 00000010  00000000  00000000  00014dec  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 000001c0  00000000  00000000  00014de8  2**3
+ 16 .debug_ranges 000001c0  00000000  00000000  00014e00  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  00016d1d  2**0
+ 17 .thread_model 00000003  00000000  00000000  00016d35  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000009  00000000  00000000  00016d20  2**0
+ 18 .cpu          00000009  00000000  00000000  00016d38  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  00016d29  2**0
+ 19 .qsys         00000001  00000000  00000000  00016d41  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  00016d2a  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  00016d42  2**0
                   CONTENTS, READONLY
- 21 .stderr_dev   0000000b  00000000  00000000  00016d2b  2**0
+ 21 .stderr_dev   0000000b  00000000  00000000  00016d43  2**0
                   CONTENTS, READONLY
- 22 .stdin_dev    0000000b  00000000  00000000  00016d36  2**0
+ 22 .stdin_dev    0000000b  00000000  00000000  00016d4e  2**0
                   CONTENTS, READONLY
- 23 .stdout_dev   0000000b  00000000  00000000  00016d41  2**0
+ 23 .stdout_dev   0000000b  00000000  00000000  00016d59  2**0
                   CONTENTS, READONLY
- 24 .sopc_system_name 00000017  00000000  00000000  00016d4c  2**0
+ 24 .sopc_system_name 00000017  00000000  00000000  00016d64  2**0
                   CONTENTS, READONLY
- 25 .quartus_project_dir 00000040  00000000  00000000  00016d63  2**0
+ 25 .quartus_project_dir 00000040  00000000  00000000  00016d7b  2**0
                   CONTENTS, READONLY
- 26 .sopcinfo     0007c6c2  00000000  00000000  00016da3  2**0
+ 26 .sopcinfo     0007c6c2  00000000  00000000  00016dbb  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00800000 l    d  .entry	00000000 .entry
@@ -749,10 +749,10 @@ int main(void)
 	enum sampling_state state = one_Hz_sampling;
   80028c:	00800044 	movi	r2,1
   800290:	e0bdf615 	stw	r2,-2088(fp)
-	static QUEUE q1;
-	//QUEUE q2;
+	static QUEUE q1; //Before I had static the program could suddenly restart, after it had
+	//QUEUE q2;      // drawn
 	//QUEUE q3;
-	static QUEUE q4;
+	static QUEUE q4;//Before I had static the program could suddenly restart
 	static QUEUE q5;
 	 QUEUE* q11 = &q1;
   800294:	00802034 	movhi	r2,128
@@ -1743,7 +1743,7 @@ alt_32 queue_dequeue(QUEUE *q)
 00800dec <queue_print>:
 
 
-void queue_print(QUEUE *q)
+void queue_print(const QUEUE *q)
 {
   800dec:	defffd04 	addi	sp,sp,-12
   800df0:	df000215 	stw	fp,8(sp)
@@ -1774,7 +1774,7 @@ void queue_print(QUEUE *q)
   800e38:	f800283a 	ret
 
 00800e3c <queue_print_screen>:
-void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT *sensor_obj){
+void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT* sensor_obj_ptr){
   800e3c:	defff004 	addi	sp,sp,-64
   800e40:	dfc00f15 	stw	ra,60(sp)
   800e44:	df000e15 	stw	fp,56(sp)
@@ -1862,7 +1862,7 @@ void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y
   800f10:	e17ffe17 	ldw	r5,-8(fp)
   800f14:	1009883a 	mov	r4,r2
   800f18:	08019280 	call	801928 <print_pix>
-	        sensor_obj->draw_graph(sensor_obj); // Redraw of graph axes just for sure. Don't need to
+	        sensor_obj_ptr->draw_graph_axes(sensor_obj_ptr); // Redraw of graph axes just for sure. Don't need to
   800f1c:	e0800417 	ldw	r2,16(fp)
   800f20:	10805417 	ldw	r2,336(r2)
   800f24:	e1000417 	ldw	r4,16(fp)
@@ -1938,7 +1938,7 @@ void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y
   800fe4:	00800644 	movi	r2,25
   800fe8:	10c5c83a 	sub	r2,r2,r3
   800fec:	e0bff915 	stw	r2,-28(fp)
-	    sensor_obj->offset = offs;    //update offset member variable
+	    sensor_obj_ptr->offset = offs;    //update offset member variable
   800ff0:	e0fff917 	ldw	r3,-28(fp)
   800ff4:	e0800417 	ldw	r2,16(fp)
   800ff8:	10c01815 	stw	r3,96(r2)
@@ -2482,13 +2482,13 @@ void read_light(QUEUE *q){
 
 008015b8 <config_time_base>:
 /************************************************/
-void config_time_base(alt_u32 time_base, SENSOR_OBJECT* sensor_obj){
+void config_time_base(alt_u32 time_base, SENSOR_OBJECT* sensor_obj_ptr){
   8015b8:	defffd04 	addi	sp,sp,-12
   8015bc:	df000215 	stw	fp,8(sp)
   8015c0:	df000204 	addi	fp,sp,8
   8015c4:	e13ffe15 	stw	r4,-8(fp)
   8015c8:	e17fff15 	stw	r5,-4(fp)
-	 sensor_obj->time_base = time_base;
+	 sensor_obj_ptr->time_base = time_base;
   8015cc:	e0bfff17 	ldw	r2,-4(fp)
   8015d0:	e0fffe17 	ldw	r3,-8(fp)
   8015d4:	10c01615 	stw	r3,88(r2)
@@ -2500,18 +2500,18 @@ void config_time_base(alt_u32 time_base, SENSOR_OBJECT* sensor_obj){
   8015e8:	f800283a 	ret
 
 008015ec <init_measurement>:
-void init_measurement(SENSOR_OBJECT* sensor_obj){
+void init_measurement(SENSOR_OBJECT* sensor_obj_ptr){
   8015ec:	defffd04 	addi	sp,sp,-12
   8015f0:	dfc00215 	stw	ra,8(sp)
   8015f4:	df000115 	stw	fp,4(sp)
   8015f8:	df000104 	addi	fp,sp,4
   8015fc:	e13fff15 	stw	r4,-4(fp)
-	queue_init(sensor_obj->q); //Zeroing the queue
+	queue_init(sensor_obj_ptr->q); //Zeroing the queue
   801600:	e0bfff17 	ldw	r2,-4(fp)
   801604:	10804f17 	ldw	r2,316(r2)
   801608:	1009883a 	mov	r4,r2
   80160c:	0800be40 	call	800be4 <queue_init>
-	sensor_obj->draw_graph(sensor_obj); //Draw graph axes
+	sensor_obj_ptr->draw_graph_axes(sensor_obj_ptr); //Draw graph axes
   801610:	e0bfff17 	ldw	r2,-4(fp)
   801614:	10805417 	ldw	r2,336(r2)
   801618:	e13fff17 	ldw	r4,-4(fp)
@@ -2526,14 +2526,14 @@ void init_measurement(SENSOR_OBJECT* sensor_obj){
 
 00801638 <draw_graph>:
 
-void draw_graph(const SENSOR_OBJECT* sensor_obj){
+void draw_graph(const SENSOR_OBJECT* sensor_obj_ptr){
   801638:	defffc04 	addi	sp,sp,-16
   80163c:	dfc00315 	stw	ra,12(sp)
   801640:	df000215 	stw	fp,8(sp)
   801644:	df000204 	addi	fp,sp,8
   801648:	e13fff15 	stw	r4,-4(fp)
 	//Draws the graph axes and prints the sensor description
-	print_char(sensor_obj->x_origo +55,sensor_obj->y_origo -3,7,0,'>');
+	print_char(sensor_obj_ptr->x_origo +55,sensor_obj_ptr->y_origo -3,7,0,'>');
   80164c:	e0bfff17 	ldw	r2,-4(fp)
   801650:	10801417 	ldw	r2,80(r2)
   801654:	10c00dc4 	addi	r3,r2,55
@@ -2547,7 +2547,7 @@ void draw_graph(const SENSOR_OBJECT* sensor_obj){
   801674:	200b883a 	mov	r5,r4
   801678:	1809883a 	mov	r4,r3
   80167c:	0801b740 	call	801b74 <print_char>
-		print_hline(sensor_obj->x_origo,sensor_obj->y_origo,60,7);
+		print_hline(sensor_obj_ptr->x_origo,sensor_obj_ptr->y_origo,60,7);
   801680:	e0bfff17 	ldw	r2,-4(fp)
   801684:	10c01417 	ldw	r3,80(r2)
   801688:	e0bfff17 	ldw	r2,-4(fp)
@@ -2558,7 +2558,7 @@ void draw_graph(const SENSOR_OBJECT* sensor_obj){
   80169c:	1809883a 	mov	r4,r3
   8016a0:	08019d40 	call	8019d4 <print_hline>
 
-		print_char(sensor_obj->x_origo -4,sensor_obj->y_origo -45,7,0,'^');
+		print_char(sensor_obj_ptr->x_origo -4,sensor_obj_ptr->y_origo -45,7,0,'^');
   8016a4:	e0bfff17 	ldw	r2,-4(fp)
   8016a8:	10801417 	ldw	r2,80(r2)
   8016ac:	10ffff04 	addi	r3,r2,-4
@@ -2572,7 +2572,7 @@ void draw_graph(const SENSOR_OBJECT* sensor_obj){
   8016cc:	200b883a 	mov	r5,r4
   8016d0:	1809883a 	mov	r4,r3
   8016d4:	0801b740 	call	801b74 <print_char>
-		print_vline(sensor_obj->x_origo-1,sensor_obj->y_origo -45,45,7);
+		print_vline(sensor_obj_ptr->x_origo-1,sensor_obj_ptr->y_origo -45,45,7);
   8016d8:	e0bfff17 	ldw	r2,-4(fp)
   8016dc:	10801417 	ldw	r2,80(r2)
   8016e0:	10ffffc4 	addi	r3,r2,-1
@@ -2585,7 +2585,7 @@ void draw_graph(const SENSOR_OBJECT* sensor_obj){
   8016fc:	1809883a 	mov	r4,r3
   801700:	0801aa40 	call	801aa4 <print_vline>
 
-		print_str(sensor_obj->x_origo -20, sensor_obj->y_origo +10,7,sensor_obj->description);
+		print_str(sensor_obj_ptr->x_origo -20, sensor_obj_ptr->y_origo +10,7,sensor_obj_ptr->description);
   801704:	e0bfff17 	ldw	r2,-4(fp)
   801708:	10801417 	ldw	r2,80(r2)
   80170c:	10fffb04 	addi	r3,r2,-20
@@ -2608,7 +2608,7 @@ void draw_graph(const SENSOR_OBJECT* sensor_obj){
 
 0080174c <update_graph>:
 
-void update_graph(SENSOR_OBJECT* sensor_obj){
+void update_graph( SENSOR_OBJECT* sensor_obj_ptr){
   80174c:	defff704 	addi	sp,sp,-36
   801750:	dfc00815 	stw	ra,32(sp)
   801754:	df000715 	stw	fp,28(sp)
@@ -2620,39 +2620,39 @@ void update_graph(SENSOR_OBJECT* sensor_obj){
 #ifdef DEBUG
 	queue_print(sensor_obj->q);
 #endif
-	queue_print_screen(sensor_obj->q,
+	queue_print_screen(sensor_obj_ptr->q,
   80176c:	e0bffc17 	ldw	r2,-16(fp)
   801770:	14004f17 	ldw	r16,316(r2)
   801774:	e0bffc17 	ldw	r2,-16(fp)
   801778:	14401417 	ldw	r17,80(r2)
   80177c:	e0bffc17 	ldw	r2,-16(fp)
   801780:	14801517 	ldw	r18,84(r2)
-			sensor_obj->x_origo,
-			sensor_obj->y_origo,
-			sensor_obj->normalization_factor,
+			sensor_obj_ptr->x_origo,
+			sensor_obj_ptr->y_origo,
+			sensor_obj_ptr->normalization_factor,
   801784:	e0bffc17 	ldw	r2,-16(fp)
   801788:	10c01717 	ldw	r3,92(r2)
 
-void update_graph(SENSOR_OBJECT* sensor_obj){
+void update_graph( SENSOR_OBJECT* sensor_obj_ptr){
 #ifdef DEBUG
 	queue_print(sensor_obj->q);
 #endif
-	queue_print_screen(sensor_obj->q,
+	queue_print_screen(sensor_obj_ptr->q,
   80178c:	1809883a 	mov	r4,r3
   801790:	08023d80 	call	8023d8 <__fixsfsi>
   801794:	100b883a 	mov	r5,r2
-			sensor_obj->x_origo,
-			sensor_obj->y_origo,
-			sensor_obj->normalization_factor,
-			sensor_obj->offset,
+			sensor_obj_ptr->x_origo,
+			sensor_obj_ptr->y_origo,
+			sensor_obj_ptr->normalization_factor,
+			sensor_obj_ptr->offset,
   801798:	e0bffc17 	ldw	r2,-16(fp)
   80179c:	10801817 	ldw	r2,96(r2)
 
-void update_graph(SENSOR_OBJECT* sensor_obj){
+void update_graph( SENSOR_OBJECT* sensor_obj_ptr){
 #ifdef DEBUG
 	queue_print(sensor_obj->q);
 #endif
-	queue_print_screen(sensor_obj->q,
+	queue_print_screen(sensor_obj_ptr->q,
   8017a0:	1009883a 	mov	r4,r2
   8017a4:	e0bffc17 	ldw	r2,-16(fp)
   8017a8:	10801917 	ldw	r2,100(r2)
@@ -2665,11 +2665,11 @@ void update_graph(SENSOR_OBJECT* sensor_obj){
   8017c4:	880b883a 	mov	r5,r17
   8017c8:	8009883a 	mov	r4,r16
   8017cc:	0800e3c0 	call	800e3c <queue_print_screen>
-			sensor_obj->x_origo,
-			sensor_obj->y_origo,
-			sensor_obj->normalization_factor,
-			sensor_obj->offset,
-			sensor_obj->rgb,sensor_obj );
+			sensor_obj_ptr->x_origo,
+			sensor_obj_ptr->y_origo,
+			sensor_obj_ptr->normalization_factor,
+			sensor_obj_ptr->offset,
+			sensor_obj_ptr->rgb,sensor_obj_ptr );
 }
   8017d0:	0001883a 	nop
   8017d4:	e6fffd04 	addi	sp,fp,-12

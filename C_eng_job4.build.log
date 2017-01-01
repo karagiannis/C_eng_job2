@@ -1,16 +1,9 @@
-09:42:24 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+10:56:22 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
 make all 
 Info: Building ../C_eng_job4_bsp/
 C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
 [BSP build complete]
-Info: Compiling sensor.c to obj/default/sensor.o
-nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
-sensor.c: In function 'update_graph':
-sensor.c:274:21: error: 'sensor_obj' undeclared (first use in this function)
-  queue_print_screen(sensor_obj->q,
-                     ^
-sensor.c:274:21: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [obj/default/sensor.o] Error 1
+[C_eng_job4 build complete]
 
-09:42:25 Build Finished (took 722ms)
+10:56:23 Build Finished (took 747ms)
 

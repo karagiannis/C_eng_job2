@@ -59,7 +59,7 @@ alt_32 queue_dequeue(QUEUE *q)
 }
 
 
-void queue_print(QUEUE *q)
+void queue_print(const QUEUE *q)
 {
     int i = 0;
     for (i = q->numitems-1; i>= 0; i--){  //print in FIFO order, oldest first
@@ -68,7 +68,7 @@ void queue_print(QUEUE *q)
 #endif
     }
 }
-void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT *sensor_obj){
+void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT* sensor_obj_ptr){
 	 int i = 0;
 	 int j;
 	 alt_32 mean = 0;
@@ -93,7 +93,7 @@ void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y
 	        	print_pix(x_origo + j, y_origo-k,0);//Blank out previous measurement
 
 	        print_pix(x_origo + j, y_origo,7);//Fix coordinate system line from previous blanking
-	        sensor_obj->draw_graph(sensor_obj); // Redraw of graph axes just for sure. Don't need to
+	        sensor_obj_ptr->draw_graph_axes(sensor_obj_ptr); // Redraw of graph axes just for sure. Don't need to
 
 	        value = offset + (alt_32)(q->items[i]/normalization); //Add offset and normalize each measurement value
 
@@ -107,7 +107,7 @@ void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y
 	    }
 	    mean = sum/q->numitems;// calculate the mean
 	    alt_32 offs = 25 - (alt_32)(mean/normalization);  //Calculate offset so that graph stays in the middle
-	    sensor_obj->offset = offs;    //update offset member variable
+	    sensor_obj_ptr->offset = offs;    //update offset member variable
 
 	    //Print the last value as a number on screen so that ones sees the instantaneous measurement
 	    	        alt_32  bcd = i2bcd(abs(q->items[0]));
@@ -253,7 +253,7 @@ void config_time_base(alt_u32 time_base, SENSOR_OBJECT* sensor_obj_ptr){
 }
 void init_measurement(SENSOR_OBJECT* sensor_obj_ptr){
 	queue_init(sensor_obj_ptr->q); //Zeroing the queue
-	sensor_obj_ptr->draw_graph(sensor_obj_ptr); //Draw graph axes
+	sensor_obj_ptr->draw_graph_axes(sensor_obj_ptr); //Draw graph axes
 }
 
 void draw_graph(const SENSOR_OBJECT* sensor_obj_ptr){
@@ -267,11 +267,11 @@ void draw_graph(const SENSOR_OBJECT* sensor_obj_ptr){
 		print_str(sensor_obj_ptr->x_origo -20, sensor_obj_ptr->y_origo +10,7,sensor_obj_ptr->description);
 }
 
-void update_graph(SENSOR_OBJECT* sensor_obj_ptr){
+void update_graph( SENSOR_OBJECT* sensor_obj_ptr){
 #ifdef DEBUG
 	queue_print(sensor_obj->q);
 #endif
-	queue_print_screen(sensor_obj->q,
+	queue_print_screen(sensor_obj_ptr->q,
 			sensor_obj_ptr->x_origo,
 			sensor_obj_ptr->y_origo,
 			sensor_obj_ptr->normalization_factor,

@@ -6,15 +6,20 @@
  */
 
 /*
- * TEIS AB
+ * TEIS
  * C-eng job
- * Programmet körs på en BeMicro10
+ * Run this code on a BeMicro10 card
  *
- * Programmets uppgift är att läsa av sensorer på kortet och presentera
- * grafer med sensordata på en VGA-skärn 640 x 480
+ * Use a VGA-screen 640 x 480. You need a connector
+ * with three 75 Ohm resistors connected. See report
+ * Lasse_Karagiannis_C_ingenjors_rapport_5.doc page 18
  *
- * Sensorerna som avläses på BeMicro 10 kortet är accelerometern,
- * termistorn och ljussensorn
+ * Used sensors are the accelerometer, thermistor and photosensor
+ *
+ * Code is built on Eclipe Nios II Software Built Tools 16.0 from Altera
+ *For building from scratch. Use unpack HW_C_eng_job.zip, for .sopcinfo-file
+ *and for .sof-file. Copy the Timer-folder from this build  into IP-folder
+ *and add files main.c, sensor.c, vga_utils.c, sensor.h, vga_utils.h
  *
  * Programmerare: Lasse Karagiannis
  * lasse.l.karagiannis@gmail.com
@@ -46,10 +51,10 @@ int main(void)
 	print_welcome_screen(); 	//"Splashscreen"
 	int sub_seconds = 0;  //hjälpvariabel för 5Hz samplingsfrekvens
 	enum sampling_state state = one_Hz_sampling;
-	static QUEUE q1;
-	//QUEUE q2;
+	static QUEUE q1; //Before I had static the program could suddenly restart, after it had
+	//QUEUE q2;      // drawn
 	//QUEUE q3;
-	static QUEUE q4;
+	static QUEUE q4;//Before I had static the program could suddenly restart
 	static QUEUE q5;
 	 QUEUE* q11 = &q1;
 	//QUEUE* q22 = &q2;
