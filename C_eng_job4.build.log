@@ -1,20 +1,9 @@
-05:33:41 **** Build of configuration Nios II for project C_eng_job4 ****
+06:38:51 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
 make all 
 Info: Building ../C_eng_job4_bsp/
 C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
 [BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
-In file included from vga_util.h:16:0,
-                 from main.c:31:
-font8x8_basic.h:69:25: error: overflow in implicit constant conversion [-Werror=overflow]
-     { 0x00, 0x66, 0x3C, 0xFF, 0x3C, 0x66, 0x00, 0x00},   // U+002A (*)
-                         ^
-font8x8_basic.h:122:49: error: overflow in implicit constant conversion [-Werror=overflow]
-     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF},   // U+005F (_)
-                                                 ^
-cc1.exe: all warnings being treated as errors
-make: *** [obj/default/main.o] Error 1
+[C_eng_job4 build complete]
 
-05:33:41 Build Finished (took 717ms)
+06:38:52 Build Finished (took 1s.164ms)
 

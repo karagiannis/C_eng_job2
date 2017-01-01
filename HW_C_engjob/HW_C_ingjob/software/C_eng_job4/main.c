@@ -28,6 +28,7 @@
 #include <io.h>
 #include <alt_types.h>
 #include <BeMicro_VGA_IP_Driver.h>
+#include "font8x8_basic.h"
 #include "vga_util.h"
 #include "sensor.h"
 

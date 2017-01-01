@@ -224,7 +224,7 @@ void read_temp(QUEUE *q){
 	ADC_INIT;
 		alt_u32 temp = ADC_READ_TEMP;
 		if(queue_enqueue(q,temp))// If I can enqueue the measurement
-;					//then do nothing
+			do_nothing();	//then do nothing
 						else{
 							queue_dequeue(q);// else throw the oldest measurement point
 							queue_enqueue(q,temp);//and then enqueue the newest
@@ -238,7 +238,7 @@ void read_light(QUEUE *q){
 	ADC_INIT;
 			alt_u32 light = ADC_READ_PHOTO;
 			if(queue_enqueue(q,light)) //If I can queue...
-;										//then Do nothing
+				do_nothing();		//then Do nothing
 							else{
 								queue_dequeue(q); //else dequeue
 								queue_enqueue(q,light); //and then enqueue
@@ -300,7 +300,7 @@ void read_accelerometerX(QUEUE *q)
 
 			alt_avalon_spi_command( ACCELEROMETER_SPI_BASE, 0,
 								  2, spi_command_tx,
-								  3, &accel_data,
+								  3, (alt_u8 *)&accel_data,
 								  0);
 #ifdef DEBUG
 			alt_printf("X:%d\t Y:%d\t Z:%d\t\n",accel_data.x, accel_data.y, accel_data.z);
@@ -310,11 +310,14 @@ void read_accelerometerX(QUEUE *q)
 		accel_x = (alt_32)accel_data.x;
 
 		if(queue_enqueue(q,accel_x))// If I can queue
-;									//then do nothing
+			do_nothing();									//then do nothing
 				else{
 					queue_dequeue(q); //dequeue the oldest element
 					queue_enqueue(q,accel_x);//and then enqueue
 				}
+}
+void do_nothing(void){
+
 }
 /*
 void read_accelerometerY(QUEUE *q)

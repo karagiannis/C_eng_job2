@@ -94,5 +94,6 @@ extern void queue_print_screen(QUEUE *q, alt_u32 x_origo, alt_u32 y_origo, alt_3
 
 extern unsigned int i2bcd(unsigned int i);//utility function for presenting time integer to bcd
 extern void update_time(unsigned int i);  //Prints the time
+extern void do_nothing(void);
 
 #endif /* SENSOR_H_ */
