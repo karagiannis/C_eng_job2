@@ -68,15 +68,13 @@ void queue_print(QUEUE *q)
 #endif
     }
 }
-void queue_print_screen(QUEUE *q, alt_u32 x_origo, alt_u32 y_origo, alt_32 normalization, alt_32 offset, alt_u32 rgb, SENSOR_OBJECT *sensor_obj){
+void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT *sensor_obj){
 	 int i = 0;
 	 int j;
 	 alt_32 mean = 0;
 	 alt_32 sum = 0;
 	 alt_32 value;
 
-
-	 sensor_obj->draw_graph(sensor_obj); // Redraw of graph axes just for sure. Don't need to
 
 
 	 // For all measusrement values...
@@ -95,19 +93,20 @@ void queue_print_screen(QUEUE *q, alt_u32 x_origo, alt_u32 y_origo, alt_32 norma
 	        	print_pix(x_origo + j, y_origo-k,0);//Blank out previous measurement
 
 	        print_pix(x_origo + j, y_origo,7);//Fix coordinate system line from previous blanking
+	        sensor_obj->draw_graph(sensor_obj); // Redraw of graph axes just for sure. Don't need to
 
-	        value = offset + q->items[i]/normalization; //Add offset and normalize each measurement value
+	        value = offset + (alt_32)(q->items[i]/normalization); //Add offset and normalize each measurement value
 
-	        if(offset + q->items[i]/normalization > 40) //Roof each value
+	        if(value > 40) //Roof each value
 	        	value = 40;
-	        if (offset + q->items[i]/normalization < 0)//Floor each value
+	        if (value < 0)//Floor each value
 	          value = 0;
 
 	        print_pix(x_origo + j,y_origo-value,rgb);  //Print the value on screen as a dot
 
 	    }
 	    mean = sum/q->numitems;// calculate the mean
-	    alt_32 offs = 25 - mean/normalization;  //Calculate offset so that graph stays in the middle
+	    alt_32 offs = 25 - (alt_32)(mean/normalization);  //Calculate offset so that graph stays in the middle
 	    sensor_obj->offset = offs;    //update offset member variable
 
 	    //Print the last value as a number on screen so that ones sees the instantaneous measurement
@@ -249,35 +248,35 @@ void read_light(QUEUE *q){
 #endif
 }
 /************************************************/
-void config_time_base(alt_u32 time_base, SENSOR_OBJECT* sensor_obj){
-	 sensor_obj->time_base = time_base;
+void config_time_base(alt_u32 time_base, SENSOR_OBJECT* sensor_obj_ptr){
+	 sensor_obj_ptr->time_base = time_base;
 }
-void init_measurement(SENSOR_OBJECT* sensor_obj){
-	queue_init(sensor_obj->q); //Zeroing the queue
-	sensor_obj->draw_graph(sensor_obj); //Draw graph axes
+void init_measurement(SENSOR_OBJECT* sensor_obj_ptr){
+	queue_init(sensor_obj_ptr->q); //Zeroing the queue
+	sensor_obj_ptr->draw_graph(sensor_obj_ptr); //Draw graph axes
 }
 
-void draw_graph(SENSOR_OBJECT* sensor_obj){
+void draw_graph(const SENSOR_OBJECT* sensor_obj_ptr){
 	//Draws the graph axes and prints the sensor description
-	print_char(sensor_obj->x_origo +55,sensor_obj->y_origo -3,7,0,'>');
-		print_hline(sensor_obj->x_origo,sensor_obj->y_origo,60,7);
+	print_char(sensor_obj_ptr->x_origo +55,sensor_obj_ptr->y_origo -3,7,0,'>');
+		print_hline(sensor_obj_ptr->x_origo,sensor_obj_ptr->y_origo,60,7);
 
-		print_char(sensor_obj->x_origo -4,sensor_obj->y_origo -45,7,0,'^');
-		print_vline(sensor_obj->x_origo-1,sensor_obj->y_origo -45,45,7);
+		print_char(sensor_obj_ptr->x_origo -4,sensor_obj_ptr->y_origo -45,7,0,'^');
+		print_vline(sensor_obj_ptr->x_origo-1,sensor_obj_ptr->y_origo -45,45,7);
 
-		print_str(sensor_obj->x_origo -20, sensor_obj->y_origo +10,7,sensor_obj->description);
+		print_str(sensor_obj_ptr->x_origo -20, sensor_obj_ptr->y_origo +10,7,sensor_obj_ptr->description);
 }
 
-void update_graph(SENSOR_OBJECT* sensor_obj){
+void update_graph(SENSOR_OBJECT* sensor_obj_ptr){
 #ifdef DEBUG
 	queue_print(sensor_obj->q);
 #endif
 	queue_print_screen(sensor_obj->q,
-			sensor_obj->x_origo,
-			sensor_obj->y_origo,
-			sensor_obj->normalization_factor,
-			sensor_obj->offset,
-			sensor_obj->rgb,sensor_obj );
+			sensor_obj_ptr->x_origo,
+			sensor_obj_ptr->y_origo,
+			sensor_obj_ptr->normalization_factor,
+			sensor_obj_ptr->offset,
+			sensor_obj_ptr->rgb,sensor_obj_ptr );
 }
 void read_accelerometerX(QUEUE *q)
 {

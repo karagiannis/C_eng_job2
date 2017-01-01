@@ -11,7 +11,7 @@
 #ifndef SENSOR_H_
 #define SENSOR_H_
 
-#define QUEUESIZE 10  // Ville ha 50 mätvärden, men funkar bara att köra en graf då.
+#define QUEUESIZE 50  // Ville ha 50 mätvärden, men funkar bara att köra en graf då.
 #include <system.h>
 #include <stddef.h>
 #include <alt_types.h>
@@ -64,11 +64,11 @@ typedef struct SENSOR_CLASS SENSOR_OBJECT;
 
 
 struct SENSOR_CLASS {
-    char description[80];			//Description of sensor preseneted ON VGA-display
-    alt_u32 x_origo;				//x-origo of sensors coordinate axes on VGA-screen
-    alt_u32 y_origo;				//y-origo of sensors coordinate axes on VGA-screen
+ const   char description[80];			//Description of sensor preseneted ON VGA-display
+ const   alt_u32 x_origo;				//x-origo of sensors coordinate axes on VGA-screen
+ const   alt_u32 y_origo;				//y-origo of sensors coordinate axes on VGA-screen
     alt_u32 time_base;				//Which samplingfreq currently used. Un necessary. But done anyway.
-    alt_u32 normalization_factor; 	//Scaling measurement data, so it fits into display
+    float normalization_factor; 	//Scaling measurement data, so it fits into display
     alt_u32 offset;					//Offset to present graph around the middle of y-axis
     alt_u32 rgb;					//Graph-color
     QUEUE queue;					//Sensor data array
@@ -78,7 +78,7 @@ struct SENSOR_CLASS {
     void (*init_measurement)(SENSOR_OBJECT*);  //Pointer to function which initializes queue to zero, and draws graph
     void (*read_sensor)(QUEUE*);  	//Pointer to function which read the sensor in particular
     void (*update_graph)(SENSOR_OBJECT*);  	//Pointer to function which draws the graph
-    void (*draw_graph)(SENSOR_OBJECT*);		//Pointer to function which draws coordinate axes
+    void (*draw_graph)(const SENSOR_OBJECT*);		//Pointer to function which draws coordinate axes
 };
 
 extern void config_time_base(alt_u32, SENSOR_OBJECT*);// Records the timebase
@@ -87,10 +87,10 @@ extern void read_accelerometerX(QUEUE *);
 //void read_accelerometerY(QUEUE *q);
 //void read_accelerometerZ(QUEUE *q);
 extern void update_graph(SENSOR_OBJECT*);
-extern void draw_graph(SENSOR_OBJECT*);				//Draws the graph axes
+extern void draw_graph(const SENSOR_OBJECT*);				//Draws the graph axes
 extern void read_temp(QUEUE *q);
 extern void read_light(QUEUE *q);
-extern void queue_print_screen(QUEUE *q, alt_u32 x_origo, alt_u32 y_origo, alt_32 normalization, alt_32 offset, alt_u32 rgb, SENSOR_OBJECT *sensor_obj);
+extern void queue_print_screen(const QUEUE *q, const alt_u32 x_origo, const alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT *sensor_obj);
 
 extern unsigned int i2bcd(unsigned int i);//utility function for presenting time integer to bcd
 extern void update_time(unsigned int i);  //Prints the time

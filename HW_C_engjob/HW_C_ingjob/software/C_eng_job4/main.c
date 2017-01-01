@@ -46,22 +46,22 @@ int main(void)
 	print_welcome_screen(); 	//"Splashscreen"
 	int sub_seconds = 0;  //hjälpvariabel för 5Hz samplingsfrekvens
 	enum sampling_state state = one_Hz_sampling;
-	QUEUE q1;
+	static QUEUE q1;
 	//QUEUE q2;
 	//QUEUE q3;
-	QUEUE q4;
-	QUEUE q5;
-	QUEUE* q11 = &q1;
+	static QUEUE q4;
+	static QUEUE q5;
+	 QUEUE* q11 = &q1;
 	//QUEUE* q22 = &q2;
 	//QUEUE* q33 = &q3;
-	QUEUE* q44 = &q4;
-	QUEUE* q55 = &q5;
+	 QUEUE* q44 = &q4;
+	 QUEUE* q55 = &q5;
 
 
 
-	SENSOR_OBJECT accelorometerX = //Accelerometer X
+	 SENSOR_OBJECT accelorometerX = //Accelerometer X
 		{	"Accelerom. x",
-			30, 50,1,1,25,4, q1,q11,
+			30, 50,1,0.1,30,4, q1,q11,
 			config_time_base,
 			init_measurement,
 			read_accelerometerX,
@@ -92,9 +92,9 @@ int main(void)
 					draw_graph
 				};
 */
-	SENSOR_OBJECT temp_sensor =				//Temperatur sensorn
+	 SENSOR_OBJECT temp_sensor =				//Temperatur sensorn
 					{	"Temperature",
-						30, 180,1,100,10,4, q4,q44,
+						30, 180,1,100.0,10,4, q4,q44,
 						config_time_base,
 						init_measurement,
 						read_temp,
@@ -103,9 +103,9 @@ int main(void)
 						draw_graph
 					};
 
-	SENSOR_OBJECT light_sensor =			//Ljussensorn
+	 SENSOR_OBJECT light_sensor =			//Ljussensorn
 						{	"Light",
-							320/3 +30, 180,1,100,10,4, q5,q55,
+							320/3 +30, 180,1,100.0,10,4, q5,q55,
 							config_time_base,
 							init_measurement,
 							read_light,
@@ -120,7 +120,7 @@ int main(void)
 							temp_sensor,
 							light_sensor};*/
 
-	SENSOR_OBJECT sensors[3]={accelorometerX,		//Array med sensor-objekt
+	 SENSOR_OBJECT sensors[3]={accelorometerX,		//Array med sensor-objekt
 								temp_sensor,
 								light_sensor
 							  };

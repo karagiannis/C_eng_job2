@@ -423,3 +423,1174 @@ obj/default/vga_util.o:(.data+0x0): multiple definition of `font8x8_basic'
 obj/default/main.o:C:\Users\root\Documents\Test_area_debug8\HW_C_engjob\HW_C_ingjob\software\C_eng_job4/main.c:45: first defined here
 collect2.exe: error: ld returned 1 exit status
 make: *** [C_eng_job4.elf] Error 1
+07:41:28 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+07:41:30 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Compiling vga_util.c to obj/default/vga_util.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/vga_util.o vga_util.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+07:42:19 **** Clean-only build of configuration Nios II for project C_eng_job4 ****
+make clean 
+[C_eng_job4 clean complete]
+07:42:20 **** Clean-only build of configuration Nios II for project C_eng_job4_bsp ****
+make clean 
+[BSP clean complete]
+07:42:20 **** Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+Compiling alt_alarm_start.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
+Compiling alt_busy_sleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_busy_sleep.o HAL/src/alt_busy_sleep.c
+Compiling alt_close.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_close.o HAL/src/alt_close.c
+Compiling alt_dcache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dcache_flush.o HAL/src/alt_dcache_flush.c
+Compiling alt_dcache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dcache_flush_all.o HAL/src/alt_dcache_flush_all.c
+Compiling alt_dcache_flush_no_writeback.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dcache_flush_no_writeback.o HAL/src/alt_dcache_flush_no_writeback.c
+Compiling alt_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dev.o HAL/src/alt_dev.c
+Compiling alt_dev_llist_insert.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dev_llist_insert.o HAL/src/alt_dev_llist_insert.c
+Compiling alt_dma_rxchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dma_rxchan_open.o HAL/src/alt_dma_rxchan_open.c
+Compiling alt_dma_txchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dma_txchan_open.o HAL/src/alt_dma_txchan_open.c
+Compiling alt_do_ctors.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_do_ctors.o HAL/src/alt_do_ctors.c
+Compiling alt_do_dtors.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_do_dtors.o HAL/src/alt_do_dtors.c
+Compiling alt_ecc_fatal_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_ecc_fatal_entry.o HAL/src/alt_ecc_fatal_entry.S
+Compiling alt_ecc_fatal_exception.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_ecc_fatal_exception.o HAL/src/alt_ecc_fatal_exception.c
+Compiling alt_env_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_env_lock.o HAL/src/alt_env_lock.c
+Compiling alt_environ.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_environ.o HAL/src/alt_environ.c
+Compiling alt_errno.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_errno.o HAL/src/alt_errno.c
+Compiling alt_exception_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_entry.o HAL/src/alt_exception_entry.S
+Compiling alt_exception_muldiv.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_muldiv.o HAL/src/alt_exception_muldiv.S
+Compiling alt_exception_trap.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_trap.o HAL/src/alt_exception_trap.S
+Compiling alt_execve.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_execve.o HAL/src/alt_execve.c
+Compiling alt_exit.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_exit.o HAL/src/alt_exit.c
+Compiling alt_fcntl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fcntl.o HAL/src/alt_fcntl.c
+Compiling alt_fd_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fd_lock.o HAL/src/alt_fd_lock.c
+Compiling alt_fd_unlock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fd_unlock.o HAL/src/alt_fd_unlock.c
+Compiling alt_find_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_find_dev.o HAL/src/alt_find_dev.c
+Compiling alt_find_file.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_find_file.o HAL/src/alt_find_file.c
+Compiling alt_flash_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_flash_dev.o HAL/src/alt_flash_dev.c
+Compiling alt_fork.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fork.o HAL/src/alt_fork.c
+Compiling alt_fs_reg.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fs_reg.o HAL/src/alt_fs_reg.c
+Compiling alt_fstat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fstat.o HAL/src/alt_fstat.c
+Compiling alt_get_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_get_fd.o HAL/src/alt_get_fd.c
+Compiling alt_getchar.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_getchar.o HAL/src/alt_getchar.c
+Compiling alt_getpid.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_getpid.o HAL/src/alt_getpid.c
+Compiling alt_gettod.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_gettod.o HAL/src/alt_gettod.c
+Compiling alt_gmon.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_gmon.o HAL/src/alt_gmon.c
+Compiling alt_icache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_icache_flush.o HAL/src/alt_icache_flush.c
+Compiling alt_icache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_icache_flush_all.o HAL/src/alt_icache_flush_all.c
+Compiling alt_iic.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_iic.o HAL/src/alt_iic.c
+Compiling alt_iic_isr_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_iic_isr_register.o HAL/src/alt_iic_isr_register.c
+Compiling alt_instruction_exception_entry.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_instruction_exception_entry.o HAL/src/alt_instruction_exception_entry.c
+Compiling alt_instruction_exception_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_instruction_exception_register.o HAL/src/alt_instruction_exception_register.c
+Compiling alt_io_redirect.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_io_redirect.o HAL/src/alt_io_redirect.c
+Compiling alt_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_ioctl.o HAL/src/alt_ioctl.c
+Compiling alt_irq_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_irq_entry.o HAL/src/alt_irq_entry.S
+Compiling alt_irq_handler.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_irq_handler.o HAL/src/alt_irq_handler.c
+Compiling alt_irq_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_irq_register.o HAL/src/alt_irq_register.c
+Compiling alt_irq_vars.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_irq_vars.o HAL/src/alt_irq_vars.c
+Compiling alt_isatty.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_isatty.o HAL/src/alt_isatty.c
+Compiling alt_kill.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_kill.o HAL/src/alt_kill.c
+Compiling alt_link.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_link.o HAL/src/alt_link.c
+Compiling alt_load.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_load.o HAL/src/alt_load.c
+Compiling alt_log_macro.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_log_macro.o HAL/src/alt_log_macro.S
+Compiling alt_log_printf.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_log_printf.o HAL/src/alt_log_printf.c
+Compiling alt_lseek.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_lseek.o HAL/src/alt_lseek.c
+Compiling alt_main.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_main.o HAL/src/alt_main.c
+Compiling alt_malloc_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_malloc_lock.o HAL/src/alt_malloc_lock.c
+Compiling alt_mcount.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_mcount.o HAL/src/alt_mcount.S
+Compiling alt_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_open.o HAL/src/alt_open.c
+Compiling alt_printf.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_printf.o HAL/src/alt_printf.c
+Compiling alt_putchar.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_putchar.o HAL/src/alt_putchar.c
+Compiling alt_putcharbuf.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_putcharbuf.o HAL/src/alt_putcharbuf.c
+Compiling alt_putstr.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_putstr.o HAL/src/alt_putstr.c
+Compiling alt_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_read.o HAL/src/alt_read.c
+Compiling alt_release_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_release_fd.o HAL/src/alt_release_fd.c
+Compiling alt_remap_cached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_remap_cached.o HAL/src/alt_remap_cached.c
+Compiling alt_remap_uncached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_remap_uncached.o HAL/src/alt_remap_uncached.c
+Compiling alt_rename.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_rename.o HAL/src/alt_rename.c
+Compiling alt_sbrk.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_sbrk.o HAL/src/alt_sbrk.c
+Compiling alt_settod.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_settod.o HAL/src/alt_settod.c
+Compiling alt_software_exception.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_software_exception.o HAL/src/alt_software_exception.S
+Compiling alt_stat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_stat.o HAL/src/alt_stat.c
+Compiling alt_tick.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_tick.o HAL/src/alt_tick.c
+Compiling alt_times.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_times.o HAL/src/alt_times.c
+Compiling alt_uncached_free.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_uncached_free.o HAL/src/alt_uncached_free.c
+Compiling alt_uncached_malloc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_uncached_malloc.o HAL/src/alt_uncached_malloc.c
+Compiling alt_unlink.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_unlink.o HAL/src/alt_unlink.c
+Compiling alt_usleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_usleep.o HAL/src/alt_usleep.c
+Compiling alt_wait.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_wait.o HAL/src/alt_wait.c
+Compiling alt_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_write.o HAL/src/alt_write.c
+Compiling altera_nios2_gen2_irq.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/altera_nios2_gen2_irq.o HAL/src/altera_nios2_gen2_irq.c
+Compiling crt0.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/crt0.o HAL/src/crt0.S
+Compiling alt_sys_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/alt_sys_init.o alt_sys_init.c
+Compiling altera_avalon_jtag_uart_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_fd.o drivers/src/altera_avalon_jtag_uart_fd.c
+Compiling altera_avalon_jtag_uart_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_init.o drivers/src/altera_avalon_jtag_uart_init.c
+Compiling altera_avalon_jtag_uart_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o drivers/src/altera_avalon_jtag_uart_ioctl.c
+Compiling altera_avalon_jtag_uart_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_read.o drivers/src/altera_avalon_jtag_uart_read.c
+Compiling altera_avalon_jtag_uart_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_write.o drivers/src/altera_avalon_jtag_uart_write.c
+Compiling altera_avalon_spi.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_spi.o drivers/src/altera_avalon_spi.c
+Compiling altera_modular_adc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_modular_adc.o drivers/src/altera_modular_adc.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_spi.o obj/drivers/src/altera_modular_adc.o
+[BSP build complete]
+07:42:29 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Compiling vga_util.c to obj/default/vga_util.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/vga_util.o vga_util.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+07:45:35 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+07:45:36 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+07:45:37 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+07:50:06 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+07:50:07 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+07:51:18 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+07:51:19 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8173 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+07:51:30 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+07:51:31 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+07:51:32 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:03:37 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:03:39 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8173 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:04:06 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:04:07 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:04:17 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:04:18 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:04:19 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:09:09 **** Clean-only build of configuration Nios II for project C_eng_job4 ****
+make clean 
+[C_eng_job4 clean complete]
+08:09:09 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:09:10 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Compiling vga_util.c to obj/default/vga_util.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/vga_util.o vga_util.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8173 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:09:26 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:09:27 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:09:27 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:14:22 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:14:24 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+In file included from main.c:33:0:
+sensor.h:50:5: error: expected specifier-qualifier-list before 'static'
+     static alt_32 items[QUEUESIZE];  //mätvärdesvektor
+     ^
+sensor.h:48:16: error: struct has no members [-Werror=pedantic]
+ typedef struct myQUEUE
+                ^
+cc1.exe: all warnings being treated as errors
+make: *** [obj/default/main.o] Error 1
+08:15:56 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:15:56 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+In file included from main.c:33:0:
+sensor.h:50:4: error: expected specifier-qualifier-list before 'inline'
+    inline static alt_32 items[QUEUESIZE];  //mätvärdesvektor
+    ^
+sensor.h:48:16: error: struct has no members [-Werror=pedantic]
+ typedef struct myQUEUE
+                ^
+cc1.exe: all warnings being treated as errors
+make: *** [obj/default/main.o] Error 1
+08:17:18 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:17:19 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+In file included from main.c:33:0:
+sensor.h:53:5: error: expected specifier-qualifier-list before 'static'
+     static alt_u32 numitems;
+     ^
+make: *** [obj/default/main.o] Error 1
+08:17:39 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:17:39 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:17:56 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:17:57 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:18:12 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:18:12 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:18:13 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:19:58 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:19:58 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:64:23: error: initializer element is not constant
+    30, 50,1,0.1,30,4, q1,q11,
+                       ^
+main.c:64:23: note: (near initialization for 'accelorometerX.queue')
+main.c:64:26: error: initializer element is not constant
+    30, 50,1,0.1,30,4, q1,q11,
+                          ^
+main.c:64:26: note: (near initialization for 'accelorometerX.q')
+main.c:97:29: error: initializer element is not constant
+       30, 180,1,100.0,10,4, q4,q44,
+                             ^
+main.c:97:29: note: (near initialization for 'temp_sensor.queue')
+main.c:97:32: error: initializer element is not constant
+       30, 180,1,100.0,10,4, q4,q44,
+                                ^
+main.c:97:32: note: (near initialization for 'temp_sensor.q')
+main.c:108:37: error: initializer element is not constant
+        320/3 +30, 180,1,100.0,10,4, q5,q55,
+                                     ^
+main.c:108:37: note: (near initialization for 'light_sensor.queue')
+main.c:108:40: error: initializer element is not constant
+        320/3 +30, 180,1,100.0,10,4, q5,q55,
+                                        ^
+main.c:108:40: note: (near initialization for 'light_sensor.q')
+main.c:123:35: error: initializer element is not constant
+  static SENSOR_OBJECT sensors[3]={accelorometerX,  //Array med sensor-objekt
+                                   ^
+main.c:123:35: note: (near initialization for 'sensors[0]')
+main.c:124:9: error: initializer element is not constant
+         temp_sensor,
+         ^
+main.c:124:9: note: (near initialization for 'sensors[1]')
+main.c:125:9: error: initializer element is not constant
+         light_sensor
+         ^
+main.c:125:9: note: (near initialization for 'sensors[2]')
+make: *** [obj/default/main.o] Error 1
+08:20:16 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:20:17 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:64:23: error: initializer element is not constant
+    30, 50,1,0.1,30,4, q1,q11,
+                       ^
+main.c:64:23: note: (near initialization for 'accelorometerX.queue')
+main.c:64:26: error: initializer element is not constant
+    30, 50,1,0.1,30,4, q1,q11,
+                          ^
+main.c:64:26: note: (near initialization for 'accelorometerX.q')
+main.c:97:29: error: initializer element is not constant
+       30, 180,1,100.0,10,4, q4,q44,
+                             ^
+main.c:97:29: note: (near initialization for 'temp_sensor.queue')
+main.c:97:32: error: initializer element is not constant
+       30, 180,1,100.0,10,4, q4,q44,
+                                ^
+main.c:97:32: note: (near initialization for 'temp_sensor.q')
+main.c:108:37: error: initializer element is not constant
+        320/3 +30, 180,1,100.0,10,4, q5,q55,
+                                     ^
+main.c:108:37: note: (near initialization for 'light_sensor.queue')
+main.c:108:40: error: initializer element is not constant
+        320/3 +30, 180,1,100.0,10,4, q5,q55,
+                                        ^
+main.c:108:40: note: (near initialization for 'light_sensor.q')
+make: *** [obj/default/main.o] Error 1
+08:21:13 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:21:14 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:25:15 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:25:16 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:25:16 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:36:36 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:36:37 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c:71:6: error: conflicting types for 'queue_print_screen'
+ void queue_print_screen(const QUEUE *q, const alt_u32 x_origo, const alt_u32 y_origo, alt_32 normalization, alt_32 offset, alt_u32 rgb, SENSOR_OBJECT *sensor_obj){
+      ^
+In file included from sensor.c:9:0:
+sensor.h:93:13: note: previous declaration of 'queue_print_screen' was here
+ extern void queue_print_screen(QUEUE *q, alt_u32 x_origo, alt_u32 y_origo, alt_32 normalization, alt_32 offset, alt_u32 rgb, SENSOR_OBJECT *sensor_obj);
+             ^
+make: *** [obj/default/sensor.o] Error 1
+08:37:07 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:37:08 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:37:31 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:37:32 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c: In function 'draw_graph':
+sensor.c:267:64: error: passing argument 4 of 'print_str' discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+   print_str(sensor_obj->x_origo -20, sensor_obj->y_origo +10,7,sensor_obj->description);
+                                                                ^
+In file included from sensor.h:24:0,
+                 from sensor.c:9:
+vga_util.h:24:13: note: expected 'char *' but argument is of type 'const char *'
+ extern void print_str(alt_u32 x_start, alt_u32 y_start,alt_u32 rgb,char *str);
+             ^
+cc1.exe: all warnings being treated as errors
+make: *** [obj/default/sensor.o] Error 1
+08:38:54 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:38:54 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c: In function 'draw_graph':
+sensor.c:267:68: error: passing argument 4 of 'print_str' discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+   print_str((sensor_obj->x_origo) -20, (sensor_obj->y_origo +10),7,sensor_obj->description);
+                                                                    ^
+In file included from sensor.h:24:0,
+                 from sensor.c:9:
+vga_util.h:24:13: note: expected 'char *' but argument is of type 'const char *'
+ extern void print_str(alt_u32 x_start, alt_u32 y_start,alt_u32 rgb,char *str);
+             ^
+cc1.exe: all warnings being treated as errors
+make: *** [obj/default/sensor.o] Error 1
+08:39:56 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:39:57 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:46:23 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:46:24 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:46:56 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:46:57 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c: In function 'draw_graph':
+sensor.c:267:64: error: passing argument 4 of 'print_str' discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+   print_str(sensor_obj->x_origo -20, sensor_obj->y_origo +10,7,sensor_obj->description);
+                                                                ^
+In file included from sensor.h:24:0,
+                 from sensor.c:9:
+vga_util.h:24:13: note: expected 'char *' but argument is of type 'const char *'
+ extern void print_str(alt_u32 x_start, alt_u32 y_start,alt_u32 rgb,char *str);
+             ^
+cc1.exe: all warnings being treated as errors
+make: *** [obj/default/sensor.o] Error 1
+08:48:59 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:49:00 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c: In function 'draw_graph':
+sensor.c:267:64: error: passing argument 4 of 'print_str' discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+   print_str(sensor_obj->x_origo -20, sensor_obj->y_origo +10,7,sensor_obj->description);
+                                                                ^
+In file included from sensor.h:24:0,
+                 from sensor.c:9:
+vga_util.h:24:13: note: expected 'char *' but argument is of type 'const char *'
+ extern void print_str(alt_u32 x_start, alt_u32 y_start,alt_u32 rgb,char *str);
+             ^
+cc1.exe: all warnings being treated as errors
+make: *** [obj/default/sensor.o] Error 1
+08:50:19 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:50:20 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Compiling vga_util.c to obj/default/vga_util.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/vga_util.o vga_util.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:51:08 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:51:08 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:51:28 **** Clean-only build of configuration Nios II for project C_eng_job4 ****
+make clean 
+[C_eng_job4 clean complete]
+08:51:28 **** Clean-only build of configuration Nios II for project C_eng_job4_bsp ****
+make clean 
+[BSP clean complete]
+08:51:29 **** Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+Compiling alt_alarm_start.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
+Compiling alt_busy_sleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_busy_sleep.o HAL/src/alt_busy_sleep.c
+Compiling alt_close.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_close.o HAL/src/alt_close.c
+Compiling alt_dcache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dcache_flush.o HAL/src/alt_dcache_flush.c
+Compiling alt_dcache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dcache_flush_all.o HAL/src/alt_dcache_flush_all.c
+Compiling alt_dcache_flush_no_writeback.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dcache_flush_no_writeback.o HAL/src/alt_dcache_flush_no_writeback.c
+Compiling alt_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dev.o HAL/src/alt_dev.c
+Compiling alt_dev_llist_insert.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dev_llist_insert.o HAL/src/alt_dev_llist_insert.c
+Compiling alt_dma_rxchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dma_rxchan_open.o HAL/src/alt_dma_rxchan_open.c
+Compiling alt_dma_txchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_dma_txchan_open.o HAL/src/alt_dma_txchan_open.c
+Compiling alt_do_ctors.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_do_ctors.o HAL/src/alt_do_ctors.c
+Compiling alt_do_dtors.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_do_dtors.o HAL/src/alt_do_dtors.c
+Compiling alt_ecc_fatal_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_ecc_fatal_entry.o HAL/src/alt_ecc_fatal_entry.S
+Compiling alt_ecc_fatal_exception.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_ecc_fatal_exception.o HAL/src/alt_ecc_fatal_exception.c
+Compiling alt_env_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_env_lock.o HAL/src/alt_env_lock.c
+Compiling alt_environ.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_environ.o HAL/src/alt_environ.c
+Compiling alt_errno.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_errno.o HAL/src/alt_errno.c
+Compiling alt_exception_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_entry.o HAL/src/alt_exception_entry.S
+Compiling alt_exception_muldiv.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_muldiv.o HAL/src/alt_exception_muldiv.S
+Compiling alt_exception_trap.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_trap.o HAL/src/alt_exception_trap.S
+Compiling alt_execve.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_execve.o HAL/src/alt_execve.c
+Compiling alt_exit.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_exit.o HAL/src/alt_exit.c
+Compiling alt_fcntl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fcntl.o HAL/src/alt_fcntl.c
+Compiling alt_fd_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fd_lock.o HAL/src/alt_fd_lock.c
+Compiling alt_fd_unlock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fd_unlock.o HAL/src/alt_fd_unlock.c
+Compiling alt_find_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_find_dev.o HAL/src/alt_find_dev.c
+Compiling alt_find_file.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_find_file.o HAL/src/alt_find_file.c
+Compiling alt_flash_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_flash_dev.o HAL/src/alt_flash_dev.c
+Compiling alt_fork.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fork.o HAL/src/alt_fork.c
+Compiling alt_fs_reg.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fs_reg.o HAL/src/alt_fs_reg.c
+Compiling alt_fstat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_fstat.o HAL/src/alt_fstat.c
+Compiling alt_get_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_get_fd.o HAL/src/alt_get_fd.c
+Compiling alt_getchar.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_getchar.o HAL/src/alt_getchar.c
+Compiling alt_getpid.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_getpid.o HAL/src/alt_getpid.c
+Compiling alt_gettod.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_gettod.o HAL/src/alt_gettod.c
+Compiling alt_gmon.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_gmon.o HAL/src/alt_gmon.c
+Compiling alt_icache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_icache_flush.o HAL/src/alt_icache_flush.c
+Compiling alt_icache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_icache_flush_all.o HAL/src/alt_icache_flush_all.c
+Compiling alt_iic.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_iic.o HAL/src/alt_iic.c
+Compiling alt_iic_isr_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_iic_isr_register.o HAL/src/alt_iic_isr_register.c
+Compiling alt_instruction_exception_entry.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_instruction_exception_entry.o HAL/src/alt_instruction_exception_entry.c
+Compiling alt_instruction_exception_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_instruction_exception_register.o HAL/src/alt_instruction_exception_register.c
+Compiling alt_io_redirect.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_io_redirect.o HAL/src/alt_io_redirect.c
+Compiling alt_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_ioctl.o HAL/src/alt_ioctl.c
+Compiling alt_irq_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_irq_entry.o HAL/src/alt_irq_entry.S
+Compiling alt_irq_handler.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_irq_handler.o HAL/src/alt_irq_handler.c
+Compiling alt_irq_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_irq_register.o HAL/src/alt_irq_register.c
+Compiling alt_irq_vars.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_irq_vars.o HAL/src/alt_irq_vars.c
+Compiling alt_isatty.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_isatty.o HAL/src/alt_isatty.c
+Compiling alt_kill.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_kill.o HAL/src/alt_kill.c
+Compiling alt_link.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_link.o HAL/src/alt_link.c
+Compiling alt_load.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_load.o HAL/src/alt_load.c
+Compiling alt_log_macro.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_log_macro.o HAL/src/alt_log_macro.S
+Compiling alt_log_printf.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_log_printf.o HAL/src/alt_log_printf.c
+Compiling alt_lseek.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_lseek.o HAL/src/alt_lseek.c
+Compiling alt_main.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_main.o HAL/src/alt_main.c
+Compiling alt_malloc_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_malloc_lock.o HAL/src/alt_malloc_lock.c
+Compiling alt_mcount.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_mcount.o HAL/src/alt_mcount.S
+Compiling alt_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_open.o HAL/src/alt_open.c
+Compiling alt_printf.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_printf.o HAL/src/alt_printf.c
+Compiling alt_putchar.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_putchar.o HAL/src/alt_putchar.c
+Compiling alt_putcharbuf.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_putcharbuf.o HAL/src/alt_putcharbuf.c
+Compiling alt_putstr.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_putstr.o HAL/src/alt_putstr.c
+Compiling alt_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_read.o HAL/src/alt_read.c
+Compiling alt_release_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_release_fd.o HAL/src/alt_release_fd.c
+Compiling alt_remap_cached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_remap_cached.o HAL/src/alt_remap_cached.c
+Compiling alt_remap_uncached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_remap_uncached.o HAL/src/alt_remap_uncached.c
+Compiling alt_rename.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_rename.o HAL/src/alt_rename.c
+Compiling alt_sbrk.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_sbrk.o HAL/src/alt_sbrk.c
+Compiling alt_settod.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_settod.o HAL/src/alt_settod.c
+Compiling alt_software_exception.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_software_exception.o HAL/src/alt_software_exception.S
+Compiling alt_stat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_stat.o HAL/src/alt_stat.c
+Compiling alt_tick.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_tick.o HAL/src/alt_tick.c
+Compiling alt_times.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_times.o HAL/src/alt_times.c
+Compiling alt_uncached_free.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_uncached_free.o HAL/src/alt_uncached_free.c
+Compiling alt_uncached_malloc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_uncached_malloc.o HAL/src/alt_uncached_malloc.c
+Compiling alt_unlink.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_unlink.o HAL/src/alt_unlink.c
+Compiling alt_usleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_usleep.o HAL/src/alt_usleep.c
+Compiling alt_wait.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_wait.o HAL/src/alt_wait.c
+Compiling alt_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/alt_write.o HAL/src/alt_write.c
+Compiling altera_nios2_gen2_irq.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/HAL/src/altera_nios2_gen2_irq.o HAL/src/altera_nios2_gen2_irq.c
+Compiling crt0.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/crt0.o HAL/src/crt0.S
+Compiling alt_sys_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/alt_sys_init.o alt_sys_init.c
+Compiling altera_avalon_jtag_uart_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_fd.o drivers/src/altera_avalon_jtag_uart_fd.c
+Compiling altera_avalon_jtag_uart_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_init.o drivers/src/altera_avalon_jtag_uart_init.c
+Compiling altera_avalon_jtag_uart_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o drivers/src/altera_avalon_jtag_uart_ioctl.c
+Compiling altera_avalon_jtag_uart_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_read.o drivers/src/altera_avalon_jtag_uart_read.c
+Compiling altera_avalon_jtag_uart_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_jtag_uart_write.o drivers/src/altera_avalon_jtag_uart_write.c
+Compiling altera_avalon_spi.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_avalon_spi.o drivers/src/altera_avalon_spi.c
+Compiling altera_modular_adc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx   -o obj/drivers/src/altera_modular_adc.o drivers/src/altera_modular_adc.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_spi.o obj/drivers/src/altera_modular_adc.o
+[BSP build complete]
+08:51:49 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Compiling vga_util.c to obj/default/vga_util.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/vga_util.o vga_util.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+08:52:14 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+08:52:16 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+08:52:16 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+09:03:23 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+09:03:41 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c:259:6: error: conflicting types for 'draw_graph'
+ void draw_graph(SENSOR_OBJECT* sensor_obj){
+      ^
+In file included from sensor.c:9:0:
+sensor.h:90:13: note: previous declaration of 'draw_graph' was here
+ extern void draw_graph(const SENSOR_OBJECT*);    //Draws the graph axes
+             ^
+make: *** [obj/default/sensor.o] Error 1
+09:04:19 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+09:04:20 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+09:05:17 **** Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+09:05:18 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+09:05:18 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+[C_eng_job4 build complete]
+09:08:14 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+09:08:15 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:64:26: error: initialization discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+    30, 50,1,0.1,30,4, q1,q11,
+                          ^
+main.c:97:32: error: initialization discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+       30, 180,1,100.0,10,4, q4,q44,
+                                ^
+main.c:108:40: error: initialization discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+        320/3 +30, 180,1,100.0,10,4, q5,q55,
+                                        ^
+cc1.exe: all warnings being treated as errors
+make: *** [obj/default/main.o] Error 1
+09:09:02 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+09:09:03 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+nios2-elf-insert C_eng_job4.elf --thread_model hal --cpu_name Nios2_CPU --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Engineering_job_emb_sys --quartus_project_dir "C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob" --sopcinfo C:/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4_bsp/../../Engineering_job_emb_sys.sopcinfo
+Info: (C_eng_job4.elf) 18 KBytes program size (code + initialized data).
+Info:                  8172 KBytes free for stack + heap.
+Info: Creating C_eng_job4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source C_eng_job4.elf >C_eng_job4.objdump
+[C_eng_job4 build complete]
+09:40:00 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+09:40:01 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c: In function 'update_graph':
+sensor.c:274:21: error: 'sensor_obj' undeclared (first use in this function)
+  queue_print_screen(sensor_obj->q,
+                     ^
+sensor.c:274:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [obj/default/sensor.o] Error 1
+09:42:23 **** Incremental Build of configuration Nios II for project C_eng_job4_bsp ****
+make all 
+[BSP build complete]
+09:42:24 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+make all 
+Info: Building ../C_eng_job4_bsp/
+C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
+[BSP build complete]
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+sensor.c: In function 'update_graph':
+sensor.c:274:21: error: 'sensor_obj' undeclared (first use in this function)
+  queue_print_screen(sensor_obj->q,
+                     ^
+sensor.c:274:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [obj/default/sensor.o] Error 1
