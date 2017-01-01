@@ -13,7 +13,7 @@
 #include <io.h>
 #include <BeMicro_VGA_IP_Driver.h>
 #include <string.h>
-#include "font8x8_basic.h"
+//#include "font8x8_basic.h"
 
 typedef alt_u8 pixel_data;
 
@@ -30,7 +30,7 @@ extern pixel_data read_pixel_ram_int(alt_u32 x_start, alt_u32 y_start);
 //void print_line(alt_u32 x_start,alt_u32 y_start,alt_u32 x_slut,alt_u32 y_slut);
 extern void print_welcome_screen();
 
- alt_u8 font8x8_basic[128][8] = {
+alt_u8 font8x8_basic[128][8] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0000 (nul)
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0001
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0002

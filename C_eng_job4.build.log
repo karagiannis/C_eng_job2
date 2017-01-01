@@ -1,9 +1,23 @@
-06:38:51 **** Incremental Build of configuration Nios II for project C_eng_job4 ****
+07:26:07 **** Build of configuration Nios II for project C_eng_job4 ****
 make all 
 Info: Building ../C_eng_job4_bsp/
 C:/altera_lite/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../C_eng_job4_bsp/
 [BSP build complete]
-[C_eng_job4 build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sensor.c to obj/default/sensor.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sensor.o sensor.c
+Info: Compiling vga_util.c to obj/default/vga_util.o
+nios2-elf-gcc -xc -MP -MMD -c -I../C_eng_job4_bsp//HAL/inc -I../C_eng_job4_bsp/ -I../C_eng_job4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/vga_util.o vga_util.c
+Info: Linking C_eng_job4.elf
+nios2-elf-g++  -T'../C_eng_job4_bsp//linker.x' -msys-crt0='../C_eng_job4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../C_eng_job4_bsp/  -msmallc  -Wl,-Map=C_eng_job4.map   -O0 -g -Wall -Wpedantic -Werror   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o C_eng_job4.elf obj/default/main.o obj/default/sensor.o obj/default/vga_util.o -lm -msys-lib=m
+obj/default/sensor.o:(.data+0x0): multiple definition of `font8x8_basic'
+obj/default/main.o:(.data+0x0): first defined here
+c:/altera_lite/16.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.2.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: Disabling relaxation: it will not work with multiple definitions
+obj/default/vga_util.o:(.data+0x0): multiple definition of `font8x8_basic'
+obj/default/main.o:C:\Users\root\Documents\Test_area_debug8\HW_C_engjob\HW_C_ingjob\software\C_eng_job4/main.c:45: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [C_eng_job4.elf] Error 1
 
-06:38:52 Build Finished (took 1s.164ms)
+07:26:09 Build Finished (took 1s.784ms)
 

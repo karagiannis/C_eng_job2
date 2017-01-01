@@ -52,10 +52,10 @@ void  print_char(alt_u32 x,alt_u32 y,alt_u32 rgb,alt_u32 BG_RGB,char Character)
 	alt_u8 temp;
 	int row;
 
-	alt_u8  token = (alt_u8)Character;
+	alt_u8  token = (alt_8)Character;
 	for (row = 0; row <8; row++)
 	{
-			temp =  (alt_u8)font8x8_basic[token][row];
+			temp =  (alt_8)font8x8_basic[token][row];
 
 			for (int pos = 0 ; pos != 8 ; pos++) {
 			    if (temp & (1 << pos)) {

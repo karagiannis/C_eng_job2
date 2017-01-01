@@ -145,7 +145,6 @@ ELF := C_eng_job4.elf
 C_SRCS += main.c
 C_SRCS += vga_util.c
 C_SRCS += sensor.c
-C_SRCS += font8x8_basic.c
 CXX_SRCS :=
 ASM_SRCS :=
 
