@@ -65,7 +65,7 @@ int main(void)
 			init_measurement,
 			read_accelerometerX,
 			update_graph,
-			&accelorometerX,
+			//&accelorometerX,
 			draw_graph
 		};
 
@@ -98,7 +98,7 @@ int main(void)
 						init_measurement,
 						read_temp,
 						update_graph,
-						&temp_sensor,
+						//&temp_sensor,
 						draw_graph
 					};
 
@@ -109,7 +109,7 @@ int main(void)
 							init_measurement,
 							read_light,
 							update_graph,
-							&light_sensor,
+							//&light_sensor,
 							draw_graph
 						};
 
