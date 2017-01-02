@@ -12,6 +12,7 @@
 #include <alt_types.h>
 #include <io.h>
 #include <BeMicro_VGA_IP_Driver.h>
+#include <altera_avalon_timer_regs.h>
 #include <string.h>
 //#include "font8x8_basic.h"
 
@@ -28,7 +29,15 @@ extern void print_symmetry_dots_circle(alt_u32 x, alt_u32 y, alt_u32 x_centrum, 
 extern void clear_screen(alt_u32 rgb);
 extern pixel_data read_pixel_ram_int(alt_u32 x_start, alt_u32 y_start);
 //void print_line(alt_u32 x_start,alt_u32 y_start,alt_u32 x_slut,alt_u32 y_slut);
-extern void print_welcome_screen();
+extern void print_welcome_screen(void);
+extern void draw_sampling_frequecy_sub_screen(void);
+extern void high_lite_5Hz_sampling_on_screen(void);
+extern void high_lite_1Hz_sampling_on_screen(void);
+extern void high_lite_dot2Hz_sampling_on_screen(void);
+extern void update_time(unsigned int i);  //Prints the time
+extern unsigned int i2bcd(unsigned int i);//utility function for presenting time integer to bcd
+
+
 
 
 

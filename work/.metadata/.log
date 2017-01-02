@@ -2204,3 +2204,68 @@ org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
 
 !ENTRY com.altera.sbtgui.launch 1 0 2017-01-01 10:56:29.287
 !MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-01 14:26:29.726
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 /cygdrive/c/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4/C_eng_job4.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-01 14:26:32.949
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-01 23:54:55.782
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-01 23:54:58.267
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go /cygdrive/c/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4/C_eng_job4.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:03:22.586
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 /cygdrive/c/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4/C_eng_job4.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:03:25.419
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:20:28.718
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 /cygdrive/c/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4/C_eng_job4.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:20:31.345
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto]
+
+!ENTRY com.altera.sbt4e.launch 4 4 2017-01-02 00:21:28.608
+!MESSAGE java.util.NoSuchElementException
+!STACK 0
+java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Unknown Source)
+	at java.util.Scanner.next(Unknown Source)
+	at com.altera.sbt4e.launch.sourcelookup.Nios2GnuSourceLookupDirector.getMultiLibSourceContainer(Nios2GnuSourceLookupDirector.java:70)
+	at com.altera.sbt4e.launch.sourcelookup.Nios2GnuSourceLookupDirector.initializeDefaults(Nios2GnuSourceLookupDirector.java:43)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.launchConfigurationChanged(AbstractSourceLookupDirector.java:350)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2141)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:380)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:246)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:216)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:170)
+	at org.eclipse.cdt.debug.internal.core.CSettingsManager.save(CSettingsManager.java:255)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.saveFormats(CDebugTarget.java:1547)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.cleanup(CDebugTarget.java:1078)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.terminated(CDebugTarget.java:1044)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleExitedEvent(CDebugTarget.java:1280)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleDebugEvents(CDebugTarget.java:929)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.fireEvents(EventManager.java:253)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:219)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:21:45.090
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 /cygdrive/c/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4/C_eng_job4.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:21:47.654
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:33:32.845
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 /cygdrive/c/Users/root/Documents/Test_area_debug8/HW_C_engjob/HW_C_ingjob/software/C_eng_job4/C_eng_job4.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-01-02 00:33:35.514
+!MESSAGE Executing: [C:/altera_lite/16.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto]

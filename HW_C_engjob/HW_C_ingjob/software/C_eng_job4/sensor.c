@@ -14,27 +14,39 @@ void queue_init(QUEUE *q)
     q->rindex = 0;//Probably un-necessay to do this, because of the above line
     q->windex = 0;
     q->numitems = 0;
+    for(int i = 0; i < QUEUESIZE; i++ )
+    	q->items[i] = 0;
 }
 
 alt_32 queue_enqueue(QUEUE *q, alt_32 item)
 {
     alt_u32 num_items = q->numitems;
     //int* temp_array;
-    alt_32 temp_array[QUEUESIZE];
+    alt_32 temp_array[QUEUESIZE]={0};//Zeroing, does it work?
     int i;
-    memset(temp_array,0,sizeof(temp_array));//Zeroing just for bughunt
+    for( i = 0; i < QUEUESIZE; i++ )//Zeroing again just for sure
+    	temp_array[i] = 0;
+    //memset(temp_array,0,sizeof(temp_array));//Zeroing just for bughunt
 
     if(num_items < QUEUESIZE)           //Check to see if the queue is not filled
+    //  num_items is allowed to reach QUEUESIZE -1 as maximum
     {
-        //temp_array = (int *)calloc(num_items,sizeof(int));//Allocate temp array with size equal to the content size of the queue
-        for(i = 0; i < num_items; i++)
+
+    	//At maximum QUEUESIZE-1 items are copied.
+    	for(i = 0; i < num_items; i++)
             temp_array[i]= q->items[i];       //Copy the queue to temp array
 
         q->items[0] = item;                    //Insert the new item in the queue, always at index 0
 
+        //Here i goes up to i < num_item +1 = QUEUESIZE -1 +1 = QUEUESIZE
+        //thus for loop below goes as high as i < QUEUESIZE
+        //for loop places items on index 1 until index QUEUESIZE-1
         for ( i = 1; i < num_items +1; i++)     //Copy back the items from temp array
             q->items[i] = temp_array[i-1];
-        //free(temp_array);                             //Dispose the temp array
+        //After the above for-loop items are placed from index 0
+        //to as high as index QUEUESIZE -1, THUS QUEUESIZE NO. OF ELEMENTS ARE PLACED
+        //AT MAXIMUM!
+
         q->numitems++;                          //increment the number of items
         q->rindex++;                            //Increment the queue pointer so it points to the next free position in the queue
         return 1;                               //The enqueue succeeded
@@ -131,93 +143,7 @@ void queue_print_screen( const QUEUE *q, const alt_u32 x_origo, const  alt_u32 y
 	    	        	print_char(x_origo +54, y_origo+30,4,0,(char)s);
 }
 
-unsigned int i2bcd(unsigned int i) {
-	//Integer to bcd
-	//Found algoritm online on discussioforum. Didn't work, had to rework it with some trials.
-    unsigned int binaryShift = 1;
-    unsigned int digit;
-    unsigned int bcd = 0;
-    //alt_printf("%d\n",i);
-    while (i > 0) {
-        digit = i % 10;
-        bcd += (digit << binaryShift);
-        binaryShift += 4;
-        i /= 10;
-    }
-    bcd = bcd >> 1; //Added this
-#ifdef DEBUG
-    unsigned int digit,n,mask;
-    for (n = 0,mask = 0x80000000;mask != 0;mask>>= 1){
-            if((n==4) || (n==8)|| (n == 12)|| n== 16 ||n==20|| n==24 ||n==28)
-                putchar(' ');
-            putchar((bcd & mask)? '1':'0');
-            n++;
-        }
-    putchar('\n');
-#endif
 
-    return bcd;
-}
-
-void update_time(unsigned int i){
-	//Used function argument earlier. Not doing it know
-
-	static int hours = 0;
-	static int minutes = 0;
-	static int seconds = 0;
-	//static int sub_seconds = 0;
-	unsigned int bcd = 0;
-	//unsigned int time[3]={hours, minutes,seconds};
-
-
-		seconds++;
-
-
-	if(seconds == 60)
-	{
-		seconds = 0;
-		minutes++;
-		if (minutes == 60)
-		{
-			minutes = 0;
-			hours++;
-		}
-	}
-
-	char c;
-	short s;
-	bcd = i2bcd(hours);   							//Hours
-	c = (char)((bcd & 0x0F0) >>4);
-	s = (short) c +48;
-	print_char(2*320/3-50 +30 +46, 130,4,0,(char)s);
-
-	c = (char)(bcd & 0x0F);
-	s = (short) c +48;
-	print_char(2*320/3 -50+30 +54,130,4,0,(char)s);
-
-	print_char(2*320/3-50 +30 +54+8,130,4,0,':'); 	// :
-
-	bcd = i2bcd(minutes);							//Minutes
-	c = (char)((bcd & 0x0F0) >>4);
-	s = (short) c +48;
-	print_char(2*320/3-50 +30 +54+8+8, 130,4,0,(char)s);
-
-	c = (char)(bcd & 0x0F);
-	s = (short) c +48;
-	print_char(2*320/3-50 +30 +54+8+8+8,130,4,0,(char)s);
-
-	print_char(2*320/3-50 +30 +54+8+8+8+8,130,4,0,':');// :
-
-
-	bcd = i2bcd(seconds);								//seconds
-		c = (char)((bcd & 0x0F0) >>4);
-		s = (short) c +48;
-		print_char(2*320/3-50 +30 +54+40, 130,4,0,(char)s);
-
-		c = (char)(bcd & 0x0F);
-		s = (short) c +48;
-		print_char(2*320/3-50 +30 +54+48,130,4,0,(char)s);
-}
 
 void read_temp(QUEUE *q){
 	ADC_INIT;

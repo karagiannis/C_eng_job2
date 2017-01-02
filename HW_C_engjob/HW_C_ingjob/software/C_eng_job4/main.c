@@ -32,15 +32,15 @@
 #include <system.h>
 #include <io.h>
 #include <alt_types.h>
-#include <BeMicro_VGA_IP_Driver.h>
-//#include "font8x8_basic.h"
+//#include <BeMicro_VGA_IP_Driver.h>
 #include "vga_util.h"
 #include "sensor.h"
 
-#include <altera_avalon_timer_regs.h>
+//#define DEBUG
 
-
+#ifdef DEBUG
 #include <string.h>
+#endif
 
 
 enum sampling_state  {five_Hz_sampling, one_Hz_sampling,dot2_Hz_sampling};
@@ -49,7 +49,6 @@ enum sampling_state  {five_Hz_sampling, one_Hz_sampling,dot2_Hz_sampling};
 int main(void)
 {
 	print_welcome_screen(); 	//"Splashscreen"
-	int sub_seconds = 0;  //hjälpvariabel för 5Hz samplingsfrekvens
 	enum sampling_state state = one_Hz_sampling;
 	static QUEUE q1; //Before I had static the program could suddenly restart, after it had
 	//QUEUE q2;      // drawn
@@ -131,20 +130,9 @@ int main(void)
 							  };
 
 
-//Rutin som rensar skärmen och skriver ut möjliga samplingsfrekvenser
-//längst ner till vänster i presentationsfönstret. Borde läggas i en funktion
-// av estetiska skäl.
-		for(int i = 0; i < 78600; i++)
-			set_address_pixel(i, 0);
-
-		print_hline(0,120,320,6);
-		print_vline(320/3,0,240,6);
-		print_vline(2*320/3,0,240,6);
-
-		print_str(2*320/3 +5,210-60,5,"1st btn 5Hz");
-		print_str(2*320/3 +5,210-30,5,"2nd btn 1Hz");
-		print_str(2*320/3 +5,210,5,"3d btn .2Hz");
-		print_str(2*320/3 +5,230,5,"L.Karagiannis");
+//Routin which clear screen and writes possibel sampling frquency at low-right
+//of the screen
+	 draw_sampling_frequecy_sub_screen();
 
 
 //Initiering av sensorerna
@@ -154,7 +142,7 @@ int main(void)
 	while(1)
 	{
 
-//Kolla upp vilken samplingsfrekvens användaren vill ha
+//Check which sampling frequency the user wants
 		if(IORD_32DIRECT(KEY_INPUT_BASE,0) == 6)//first button
 			state = five_Hz_sampling;
 		if(IORD_32DIRECT(KEY_INPUT_BASE,0) == 5)//snd button
@@ -169,19 +157,8 @@ int main(void)
 			alt_printf("5Hz sampling\n");
 
 #endif
-//Färga texten för den samplingsfrekvens som valts
-			print_str(2*320/3 +5,210-60,2,"1st btn 5Hz");
-			print_str(2*320/3 +5,210-30,5,"2nd btn 1Hz");
-			print_str(2*320/3 +5,210,5,"3d btn .2Hz");
-			TIMER_RESET;
-			TIMER_START;
-			while(TIMER_READ < 100000);
-			sub_seconds++;
-			if(sub_seconds == 5)
-			{
-				update_time(1);
-				sub_seconds = 0;
-			}
+//Highlite the text for the samplingfrequency 5Hz
+			high_lite_5Hz_sampling_on_screen();
 
 			for(int i = 0; i<3; i++)
 			{
@@ -196,16 +173,7 @@ int main(void)
 			alt_printf("slow\n");
 
 #endif
-//Färga texten för den samplingsfrekvens som valts
-			print_str(2*320/3 +5,210-60,5,"1st btn 5Hz");
-			print_str(2*320/3 +5,210-30,2,"2nd btn 1Hz");
-			print_str(2*320/3 +5,210,5,"3d btn .2Hz");
-			TIMER_RESET;
-			TIMER_START;
-				while(TIMER_READ < 50000000);
-				update_time(1);
-				TIMER_RESET;
-				TIMER_START;
+			high_lite_1Hz_sampling_on_screen();
 
 			for(int i = 0; i<3; i++)
 			{
@@ -221,19 +189,7 @@ int main(void)
 					alt_printf("0.5 sampling rate\n");
 
 		#endif
-//Färga texten för den samplingsfrekvens som valts
-					print_str(2*320/3 +5,210-60,5,"1st btn 5Hz");
-					print_str(2*320/3 +5,210-30,5,"2nd btn 1Hz");
-					print_str(2*320/3 +5,210,2,"3d btn .2Hz");
-					for(int i = 0; i < 5; i++)
-					{
-						TIMER_RESET;
-						TIMER_START;
-
-						while(TIMER_READ < 50000000);
-						update_time(1);
-					}
-
+					high_lite_dot2Hz_sampling_on_screen();
 
 					for(int i = 0; i<3; i++)
 					{

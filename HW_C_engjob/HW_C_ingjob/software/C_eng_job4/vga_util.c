@@ -8,6 +8,160 @@
 #include <alt_types.h>
 #include "vga_util.h"
 
+unsigned int i2bcd(unsigned int i) {
+	//Integer to bcd
+	//Found algoritm online on discussioforum. Didn't work, had to rework it with some trials.
+    unsigned int binaryShift = 1;
+    unsigned int digit;
+    unsigned int bcd = 0;
+    //alt_printf("%d\n",i);
+    while (i > 0) {
+        digit = i % 10;
+        bcd += (digit << binaryShift);
+        binaryShift += 4;
+        i /= 10;
+    }
+    bcd = bcd >> 1; //Added this
+#ifdef DEBUG
+    unsigned int digit,n,mask;
+    for (n = 0,mask = 0x80000000;mask != 0;mask>>= 1){
+            if((n==4) || (n==8)|| (n == 12)|| n== 16 ||n==20|| n==24 ||n==28)
+                putchar(' ');
+            putchar((bcd & mask)? '1':'0');
+            n++;
+        }
+    putchar('\n');
+#endif
+
+    return bcd;
+}
+
+
+void update_time(unsigned int i){
+	//Used function argument earlier. Not doing it know
+
+	static int hours = 0;
+	static int minutes = 0;
+	static int seconds = 0;
+	//static int sub_seconds = 0;
+	unsigned int bcd = 0;
+	//unsigned int time[3]={hours, minutes,seconds};
+
+
+		seconds++;
+
+
+	if(seconds == 60)
+	{
+		seconds = 0;
+		minutes++;
+		if (minutes == 60)
+		{
+			minutes = 0;
+			hours++;
+		}
+	}
+
+	char c;
+	short s;
+	bcd = i2bcd(hours);   							//Hours
+	c = (char)((bcd & 0x0F0) >>4);
+	s = (short) c +48;
+	print_char(2*320/3-50 +30 +46, 130,4,0,(char)s);
+
+	c = (char)(bcd & 0x0F);
+	s = (short) c +48;
+	print_char(2*320/3 -50+30 +54,130,4,0,(char)s);
+
+	print_char(2*320/3-50 +30 +54+8,130,4,0,':'); 	// :
+
+	bcd = i2bcd(minutes);							//Minutes
+	c = (char)((bcd & 0x0F0) >>4);
+	s = (short) c +48;
+	print_char(2*320/3-50 +30 +54+8+8, 130,4,0,(char)s);
+
+	c = (char)(bcd & 0x0F);
+	s = (short) c +48;
+	print_char(2*320/3-50 +30 +54+8+8+8,130,4,0,(char)s);
+
+	print_char(2*320/3-50 +30 +54+8+8+8+8,130,4,0,':');// :
+
+
+	bcd = i2bcd(seconds);								//seconds
+		c = (char)((bcd & 0x0F0) >>4);
+		s = (short) c +48;
+		print_char(2*320/3-50 +30 +54+40, 130,4,0,(char)s);
+
+		c = (char)(bcd & 0x0F);
+		s = (short) c +48;
+		print_char(2*320/3-50 +30 +54+48,130,4,0,(char)s);
+}
+extern void high_lite_dot2Hz_sampling_on_screen(void)
+{
+	//Färga texten för den samplingsfrekvens som valts
+						print_str(2*320/3 +5,210-60,5,"1st btn 5Hz");
+						print_str(2*320/3 +5,210-30,5,"2nd btn 1Hz");
+						print_str(2*320/3 +5,210,2,"3d btn .2Hz");
+						for(int i = 0; i < 5; i++)
+						{
+							TIMER_RESET;
+							TIMER_START;
+
+							while(TIMER_READ < 50000000);
+							update_time(1);
+						}
+
+}
+
+extern void high_lite_1Hz_sampling_on_screen(void)
+{
+	//Färga texten för den samplingsfrekvens som valts
+				print_str(2*320/3 +5,210-60,5,"1st btn 5Hz");
+				print_str(2*320/3 +5,210-30,2,"2nd btn 1Hz");
+				print_str(2*320/3 +5,210,5,"3d btn .2Hz");
+				TIMER_RESET;
+				TIMER_START;
+					while(TIMER_READ < 50000000);
+					update_time(1);
+					TIMER_RESET;
+					TIMER_START;
+}
+
+void high_lite_5Hz_sampling_on_screen(void)
+{
+			int sub_seconds = 0;
+	//Färga texten för den samplingsfrekvens som valts
+			print_str(2*320/3 +5,210-60,2,"1st btn 5Hz");
+			print_str(2*320/3 +5,210-30,5,"2nd btn 1Hz");
+			print_str(2*320/3 +5,210,5,"3d btn .2Hz");
+			TIMER_RESET;
+			TIMER_START;
+			while(TIMER_READ < 100000);
+			sub_seconds++;
+			if(sub_seconds == 5)
+			{
+				update_time(1);
+				sub_seconds = 0;
+			}
+}
+
+extern void draw_sampling_frequecy_sub_screen(void)
+{
+	for(int i = 0; i < 78600; i++)
+				set_address_pixel(i, 0);
+
+			print_hline(0,120,320,6);
+			print_vline(320/3,0,240,6);
+			print_vline(2*320/3,0,240,6);
+
+			print_str(2*320/3 +5,210-60,5,"1st btn 5Hz");
+			print_str(2*320/3 +5,210-30,5,"2nd btn 1Hz");
+			print_str(2*320/3 +5,210,5,"3d btn .2Hz");
+			print_str(2*320/3 +5,230,5,"L.Karagiannis");
+
+}
+
+
 void print_pix(alt_u32 x,alt_u32 y,alt_u32 rgb)
 {
 	if(rgb <= 7 && rgb >= 0)

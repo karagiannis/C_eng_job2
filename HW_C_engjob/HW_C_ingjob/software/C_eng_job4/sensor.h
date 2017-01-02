@@ -18,9 +18,9 @@
 #include <io.h>
 #include <altera_avalon_spi.h>
 #include <altera_avalon_spi_regs.h>
-#include <string.h>
+#include <string.h>  //For memset-function
 #include <math.h>
-#include <stdlib.h>
+#include <stdlib.h>  //for abs function
 #include "vga_util.h"
 
 #define WRITE_COMMAND 0x0A 	// Used for acc SPI
@@ -92,8 +92,7 @@ extern void read_temp(QUEUE *q);
 extern void read_light(QUEUE *q);
 extern void queue_print_screen(const QUEUE *q, const alt_u32 x_origo, const alt_u32 y_origo, alt_32 normalization, alt_32 offset, const alt_u32 rgb, SENSOR_OBJECT* sensor_obj);
 
-extern unsigned int i2bcd(unsigned int i);//utility function for presenting time integer to bcd
-extern void update_time(unsigned int i);  //Prints the time
+
 extern void do_nothing(void);
 
 #endif /* SENSOR_H_ */
