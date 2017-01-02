@@ -11,7 +11,7 @@
 #ifndef SENSOR_H_
 #define SENSOR_H_
 
-#define QUEUESIZE 50  // Ville ha 50 mätvärden, men funkar bara att köra en graf då.
+#define QUEUESIZE 10  // Ville ha 50 mätvärden, men funkar bara att köra en graf då.
 #include <system.h>
 #include <stddef.h>
 #include <alt_types.h>

@@ -64,7 +64,7 @@ typedef struct SENSOR_CLASS SENSOR_OBJECT;
 
 
 struct SENSOR_CLASS {
- const   char description[19];			//Description of sensor preseneted ON VGA-display
+ const   char description[80];			//Description of sensor preseneted ON VGA-display
  const   alt_u32 x_origo;				//x-origo of sensors coordinate axes on VGA-screen
  const   alt_u32 y_origo;				//y-origo of sensors coordinate axes on VGA-screen
     alt_u32 time_base;				//Which samplingfreq currently used. Un necessary. But done anyway.
