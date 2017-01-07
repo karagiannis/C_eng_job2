@@ -124,22 +124,20 @@ extern void high_lite_1Hz_sampling_on_screen(void)
 					while(TIMER_READ < 50000000);
 					update_time(1);
 					TIMER_RESET;
-
+					TIMER_START;
 }
 
 void high_lite_5Hz_sampling_on_screen(void)
 {
-			static int sub_seconds = 0;
+			int sub_seconds = 0;
 	//Färga texten för den samplingsfrekvens som valts
 			print_str(2*320/3 +5,210-60,2,"1st btn 5Hz");
 			print_str(2*320/3 +5,210-30,5,"2nd btn 1Hz");
 			print_str(2*320/3 +5,210,5,"3d btn .2Hz");
 			TIMER_RESET;
 			TIMER_START;
-			while(TIMER_READ < 10);
+			while(TIMER_READ < 100000);
 			sub_seconds++;
-			TIMER_RESET;
-			TIMER_START;
 			if(sub_seconds == 5)
 			{
 				update_time(1);
